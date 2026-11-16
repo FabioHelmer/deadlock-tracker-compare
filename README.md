@@ -9,7 +9,6 @@ npm install
 npm run dev
 ```
 
-Perfil inicial: `1013623044`. É possível consultar outro Account ID pelo campo de busca.
 
 ## Verificar
 
@@ -61,3 +60,16 @@ Na primeira visita, a home pede o nome da Steam e oferece a escolha do perfil no
 
 O botão "Trocar meu perfil" volta à home para escolher outra pessoa. Links compartilhados têm prioridade na visita e não substituem o perfil salvo. Se o armazenamento estiver bloqueado, o painel continua funcionando e avisa que o perfil não será lembrado. Armazenamento inválido é ignorado.
 "# deadlock-tracker-compare" 
+
+
+## Publicar no GitHub Pages
+
+O projeto está configurado para https://fabiohelmer.github.io/deadlock-tracker-compare/.
+
+1. No repositório, abra Settings → Pages → Build and deployment → Source e selecione GitHub Actions.
+2. Envie os arquivos e o package-lock.json para a branch main.
+3. Acompanhe o workflow Deploy to GitHub Pages na aba Actions. Ele instala dependências, executa lint e testes, gera dist e publica o site. Também é possível executá-lo manualmente.
+
+Não é necessário enviar node_modules ou dist. O base do Vite está definido como /deadlock-tracker-compare/. Se renomear o repositório ou usar domínio próprio, ajuste esse valor.
+
+A API é acessada diretamente pelo navegador e deve ser validada no endereço publicado. Não há backend ou segredo necessário para o deploy.
